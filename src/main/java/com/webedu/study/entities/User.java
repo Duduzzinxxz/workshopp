@@ -10,7 +10,9 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tb_user")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     //Caso ter algum erro, usar o implements Serialazible
 
     @Id
