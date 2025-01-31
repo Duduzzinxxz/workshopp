@@ -1,5 +1,7 @@
 # Work Shop
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Duduzzinxxz/workshopp/blob/main/LICENSE) 
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 
 # Sobre o projeto
 
