@@ -28,12 +28,12 @@ A relação entre essas entidades pode ser resumida da seguinte forma:
 - Postman
 
 ## Implantação em produção
-- Banco de dados: H2
+- Banco de dados: [H2 Database](https://www.h2database.com/html/tutorial.html)
 
 # Como executar o projeto
 
 ### Pré-requisitos
-- Java 11, 17 ou 21
+- Java [11, 17 ou 21](https://www.oracle.com/java/technologies/downloads/#jdk21-windows)
 
 ---
 ### Passos para Configurar e Executar o Projeto
@@ -71,6 +71,178 @@ A relação entre essas entidades pode ser resumida da seguinte forma:
    Clique em **Connect** para acessar o banco de dados.
 
 ---
+
+# API Endpoints
+
+## Users
+
+### Listar todos os usuários (GET)
+```bash
+GET | http://localhost:8080/users
+```
+#### Exemplo da resposta:
+``` json
+[
+    {
+        "id": 1,
+        "name": "Maria Brown",
+        "email": "maria@gmail.com",
+        "phone": "988888888",
+        "password": "123456"
+    },
+    {
+        "id": 2,
+        "name": "Alex Green",
+        "email": "alex@gmail.com",
+        "phone": "977777777",
+        "password": "123456"
+    }
+]
+```
+
+### Obter um usuário por ID (GET)
+
+```bash
+GET | http://localhost:8080/users/1
+```
+#### Exemplo da resposta:
+``` json
+{
+    "id": 1,
+    "name": "Maria Brown",
+    "email": "maria@gmail.com",
+    "phone": "988888888",
+    "password": "123456"
+}
+```
+
+### Criar um novo usuário (POST)
+```bash
+POST | http://localhost:8080/users
+```
+#### Exemplo da requisição:
+``` json
+{
+ "name": "Bob Brown",
+ "email": "bob@gmail.com",
+ "phone": "977557755",
+ "password": "123456"
+}
+```
+
+### Atualizar um usuário existente (PUT)
+```bash
+PUT | http://localhost:8080/users/1
+```
+#### Exemplo da requisição:
+``` json
+{
+ "name": "Bob Brown",
+ "email": "bob@gmail.com",
+ "phone": "977557755"
+}
+```
+
+### Excluir um usuário (DELETE)
+```bash
+DELETE | http://localhost:8080/users/3
+```
+
+## Orders
+
+### Listar todos os pedidos (GET)
+```bash
+GET | http://localhost:8080/orders
+```
+
+### Obter um pedido por ID (GET)
+```bash
+GET | http://localhost:8080/orders/1
+```
+#### Exemplo de resposta:
+``` json
+{
+    "id": 1,
+    "moment": "2019-06-20T19:53:07Z",
+    "orderStatus": "PAID",
+    "client": {
+        "id": 1,
+        "name": "Eduardo",
+        "email": "bob@gmail.com",
+        "phone": "977557755",
+        "password": "123456"
+    },
+    "items": [
+        {
+            "quantity": 2,
+            "price": 90.5,
+            "subTotal": 181.0,
+            "product": {
+                "id": 1,
+                "name": "The Lord of the Rings",
+                "description": "Lorem ipsum dolor sit amet, consectetur.",
+                "price": 90.5,
+                "imgUrl": "",
+                "categories": [
+                    {
+                        "id": 2,
+                        "name": "Books"
+                    }
+                ]
+            }
+        },
+        {
+            "quantity": 1,
+            "price": 1250.0,
+            "subTotal": 1250.0,
+            "product": {
+                "id": 3,
+                "name": "Macbook Pro",
+                "description": "Nam eleifend maximus tortor, at mollis.",
+                "price": 1250.0,
+                "imgUrl": "",
+                "categories": [
+                    {
+                        "id": 3,
+                        "name": "Computers"
+                    }
+                ]
+            }
+        }
+    ],
+    "payment": {
+        "id": 1,
+        "moment": "2019-06-20T21:53:07Z"
+    },
+    "total": 1431.0
+}
+```
+
+## Products
+
+### Listar todos os produtos (GET)
+```bash
+GET | http://localhost:8080/products
+```
+
+### Obter um produto por ID (GET)
+```bash
+GET | http://localhost:8080/products/1
+```
+
+## Categories
+
+### Listar todas as categorias (GET)
+
+```bash
+GET | http://localhost:8080/categories
+```
+
+### Obter uma categoria por ID (GET)
+
+```bash
+GET | http://localhost:8080/categories/1
+```
 
 # Autor
 
