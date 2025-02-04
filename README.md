@@ -28,7 +28,8 @@ A relação entre essas entidades pode ser resumida da seguinte forma:
 - Postman
 
 ## Implantação em produção
-- Banco de dados: [H2 Database](https://www.h2database.com/html/tutorial.html)
+- Banco de dados (test profile): [H2 Database](https://www.h2database.com/html/tutorial.html)
+- Banco de dados (dev profile): [PostgreSQL](https://www.postgresql.org/download/)
 
 # Como executar o projeto
 
